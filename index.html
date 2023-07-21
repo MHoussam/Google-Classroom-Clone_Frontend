@@ -10,7 +10,17 @@
     <body>
         <header class="header flex">
             <div class="header-left flex">
-                <abbr title="Main Menu"> <img src="./src/assets/images/hamburger-menu.png" class="menu" alt="Menu"> </abbr>
+                <div class="hamburger-menu flex">
+                    <abbr title="Main Menu">
+                        <div class="menu flex-column pointer">
+                            <div class="menu-line"></div>
+
+                            <div class="menu-line"></div>
+
+                            <div class="menu-line"></div>
+                        </div>
+                    </abbr>
+                </div>
 
                 <div class="header-google-classroom flex">
                     <img src="./src/assets/images/google-logo.svg" class="google-logo" alt="Google Logo">
@@ -23,7 +33,7 @@
 
             <div class="header-right flex">
                 <abbr title="Create or join a class"> 
-                    <div class="header-join-classes">
+                    <div class="header-join-classes pointer">
                         <div class="header-join-classes-hor"></div>
 
                         <div class="header-join-classes-ver"></div>
@@ -31,7 +41,7 @@
                 </abbr>
 
                 <abbr title="Google Apps">
-                    <div class="header-google-apps flex-column">
+                    <div class="header-google-apps flex-column pointer">
                         <div class="header-google-apps-row flex">
                             <div class="google-apps-circle"></div>
 
@@ -58,8 +68,7 @@
                     </div>
                 </abbr>
                 
-                <abbr title="Google Account"> <div class="header-google-account"></div> </abbr>
-
+                <abbr title="Google Account"> <div class="header-google-account pointer"></div> </abbr>
         </header>
 
         <hr>
