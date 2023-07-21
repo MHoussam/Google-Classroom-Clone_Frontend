@@ -2,6 +2,11 @@
     display: flex;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .font-sans-serif {
     color: #5F6368;
     font-family: sans-serif;
@@ -12,7 +17,7 @@
 
 .header {
     padding-left: 1.3%;
-    padding-top: 1.5%;
+    padding-top: 2.1%;
     margin-top: -.6%;
     position: fixed;
     background-color: #FFFFFF;
@@ -43,6 +48,55 @@
 
 .header-classroom {
     margin-top: 0;
+}
+
+.header-right {
+    column-gap: 30px;    
+    align-items: center;
+    margin-top: -1%;
+    padding-right: 1%;
+}
+
+.header-join-classes {
+    margin-top: 4%;
+}
+
+.header-join-classes-hor {
+    width: 16px;
+    height: 2px;
+    background-color: #212121;
+}
+
+.header-join-classes-ver {
+    width: 2px;
+    height: 16px;
+    background-color: #212121;
+    position: absolute;
+    margin-top: -.65%;
+    margin-left: .5%;
+}
+
+.header-google-apps {
+    align-items: center;
+    row-gap: 2px;
+}
+
+.header-google-apps-row {
+    column-gap: 2px;
+}
+
+.google-apps-circle {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #5F6368;
+}
+
+.header-google-account {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #5F6368;
 }
 
 hr {
