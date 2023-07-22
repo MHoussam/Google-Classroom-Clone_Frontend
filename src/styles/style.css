@@ -16,6 +16,20 @@
     cursor: pointer;
 }
 
+.link {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.link-bk {
+    text-decoration: none;
+    color: rgba(0,0,0,.87);
+}
+
+.link:hover, .link-bk:hover {
+    text-decoration: underline;
+}
+
 .font-sans-serif {
     color: #5F6368;
     font-family: sans-serif;
@@ -181,7 +195,7 @@ h4 {
 
 .class-options-container {
     margin-left: 5%;
-    align-items: center;
+    align-items: start;
 }
 
 .class-options {
@@ -280,3 +294,4 @@ h4 {
     margin-left: 15px;
     fill: #5F6368;
 }
+
