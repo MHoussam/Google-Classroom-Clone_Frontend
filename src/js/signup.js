@@ -13,13 +13,14 @@ document.getElementById("submit-teacher").addEventListener("click", (event) => {
         password: password
     };
 
-    fetch('http://localhost/Google-Classroom-Clone_Backend-main/register-teacher.php', {
-        method: "post",
+    fetch('http://localhost/Google-Classroom-Clone_Backend/register-teacher.php', {
+        method: "POST",
         mode: 'cors',
         cache: "no-cache",
-        
+        origin: "http://localhost:5500",
         headers: {
-            'Content-Type': 'application/json', 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(registerCredebtials), 
     })
@@ -52,11 +53,11 @@ document.getElementById("submit-student").addEventListener("click", (event) => {
         password: password
     };
 
-    fetch('http://localhost/Google-Classroom-Clone_Backend-main/register-student.php', {
+    fetch('http://localhost/Google-Classroom-Clone_Backend/register-student.php', {
         method: 'POST', 
         mode: 'cors',
         cache: "no-cache",
-        
+        origin: "http://localhost:5500",
         headers: {
             'Content-Type': 'application/json', 
         },
