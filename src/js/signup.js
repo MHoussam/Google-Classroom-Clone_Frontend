@@ -1,14 +1,14 @@
 document.getElementById("submit-teacher").addEventListener("click", (event) => {
     event.preventDefault();
-    const firstName = document.getElementById("user-f-name").value;
-    const lastName = document.getElementById("user-l-name").value;
+    const first_name = document.getElementById("user-f-name").value;
+    const last_name = document.getElementById("user-l-name").value;
     const email = document.getElementById("user-email").value;
     const password = document.getElementById("user-password").value;
 
     
-    const registerCredebtials = {
-        firstName: firstName,
-        lastName: lastName,
+    const registerCredentials = {
+        first_name: first_name,
+        last_name: last_name,
         email: email,
         password: password
     };
@@ -22,12 +22,14 @@ document.getElementById("submit-teacher").addEventListener("click", (event) => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(registerCredebtials), 
+        body: JSON.stringify(registerCredentials), 
     })
     .then(response => response.json()) 
     .then(response => {
         if (response["status"]) {
-            window.location.href = "index.html";
+            // window.location.href = "index.html";
+            console.log(response);
+
         } else {
             console.log(response["message"]);
         }
@@ -40,15 +42,15 @@ document.getElementById("submit-teacher").addEventListener("click", (event) => {
 
 document.getElementById("submit-student").addEventListener("click", (event) => {
     event.preventDefault();
-    const firstName = document.getElementById("user-f-name").value;
-    const lastName = document.getElementById("user-l-name").value;
+    const first_name = document.getElementById("user-f-name").value;
+    const last_name = document.getElementById("user-l-name").value;
     const email = document.getElementById("user-email").value;
     const password = document.getElementById("user-password").value;
 
     
-    const registerCredebtials = {
-        firstName: firstName,
-        lastName: lastName,
+    const registerCredentials = {
+        first_name: first_name,
+        last_name: last_name,
         email: email,
         password: password
     };
@@ -61,12 +63,13 @@ document.getElementById("submit-student").addEventListener("click", (event) => {
         headers: {
             'Content-Type': 'application/json', 
         },
-        body: JSON.stringify(registerCredebtials), 
+        body: JSON.stringify(registerCredentials), 
     })
     .then(response => response.json()) 
     .then(response => {
         if (response["status"]) {
-            window.location.href = "index.html";
+            // window.location.href = "index.html";
+            console.log(response);
         } else {
             console.log(response["message"]);
         }
