@@ -310,6 +310,7 @@ hr {
 
 .body-right {
     width: 80%;
+    row-gap: 25px;
 }
 
 .post {
