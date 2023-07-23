@@ -17,9 +17,11 @@ document.getElementById("submit").addEventListener("click", (event) => {
     }).then(response => response.json())
       .then(data => {
           if (data["status"]) {
-              window.location.href = "index.html";
+            //   window.location.href = "index.html";
+                alert("validated")
           } else {
               console.log(data["message"]);
+              
           }
       })
       .catch(error => {
