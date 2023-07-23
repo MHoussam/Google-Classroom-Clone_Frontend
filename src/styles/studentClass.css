@@ -222,6 +222,10 @@ hr {
     fill: #FFFFFF;
 }
 
+.class-body {
+    column-gap: 23px;
+}
+
 .body-left {
     width: 20%;
     row-gap: 20px;
@@ -302,6 +306,47 @@ hr {
 .view-all {
     margin-top: 2%;
     justify-content: flex-end;
+}
+
+.body-right {
+    width: 80%;
+}
+
+.post {
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    padding: 2% 3%;
+    justify-content: space-between;
+}
+
+.post-left {
+    column-gap: 15px;
+}
+
+.circle {
+    background-color: #5F6368;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.material-icon {
+    fill: #FFFFFF;
+    width: 100%;
+    margin-top: 20%;
+}
+
+.post-description {
+    row-gap: 5px;
+}
+
+.post-date {
+    color: #5f6368;
+    font-size: 0.75rem;
+}
+
+.post-copy-link {
+    align-items: center;
 }
 
 .help {
