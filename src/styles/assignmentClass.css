@@ -1,3 +1,4 @@
+
 .flex {
     display: flex;
 }
@@ -181,152 +182,22 @@ hr {
     width: 100%;
 }
 
-.class-content {
-    margin-left: 12.5%;
-    margin-top: 2%;
-    width: 74%;
+.left-content hr {
+    opacity: 40%;
+    z-index: 1;
+    width: 100%;
+    margin-top: 10px;
 }
 
-.class-image-container {
-    border-radius: 10px;
-    margin-bottom: 3.5%;
+.head-info{
+    margin-left: 50px;
 }
 
-.class-image {
-    width: 100%;    
-    border-radius: 10px;
-}
-
-.image-content {
-    position: relative;    
-    margin-top: -9%;
-    margin-left: 1.5%;
+.grade-deadline{
     justify-content: space-between;
-}
-
-.image-title {
-    font-size: 2.25rem;
-    font-weight: 500;
-    line-height: 2.75rem;
-}
-
-.image-sub-title {
-    font-size: 1.375rem;
-    font-weight: 400;
-    line-height: 1.75rem;
-}
-
-.info {
     align-items: flex-end;
-    margin-right: 1%;
-    fill: #FFFFFF;
-}
-
-.class-body {
-    column-gap: 23px;
-}
-
-.body-left {
-    width: 20%;
-    row-gap: 20px;
-}
-
-.join-meet {
-    border: 1px solid #DADCE0;
-    border-radius: 7px;
-    padding: 8.5%;
-    row-gap: 10px;
-}
-
-.meet-copy-link {
-    justify-content: space-between;
-}
-
-.meet, .meet-copy-link {
-    align-items: center;
-}
-
-.meet {
-    column-gap: 10px;
-}
-
-.copy-link-circles {
-    row-gap: 2px;
-}
-
-.meet-icon {
-    width: 25px;
-}
-
-.meet-text {
-    color: #5F6368;
-}
-
-.join-btn {
-    background-color: #137333;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.join-text {
-    color: #FFFFFF;    
-    width: 100%;
-    padding: 5% 0;
-    justify-content: center;
-}
-
-.upcoming {
-    border: 1px solid #DADCE0;
-    border-radius: 7px;
-    padding: 8%;
-    row-gap: 15px;
-}
-
-.upcoming-title {
-    color: #474A4D;
-}
-
-.due {
-    row-gap: 5px;
-}
-
-.due-date {
-    color: #737373;
-    font-size: 13px;
-}
-
-.due-hour {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 0.8125rem;
-    font-weight: 400;
-}
-
-.view-all {
-    margin-top: 2%;
-    justify-content: flex-end;
-}
-
-.body-right {
-    width: 80%;
-    row-gap: 25px;
-}
-
-.body-right ol {
-    list-style-type: none;
-    padding: 0;
-}
-
-.post {
-    border: 1px solid #DADCE0;
-    border-radius: 7px;
-    padding: 2% 3%;
-    justify-content: space-between;
-}
-
-.post-left {
-    column-gap: 15px;
+    margin: 20px 20px 0px 50px;
+    
 }
 
 .circle {
@@ -334,7 +205,10 @@ hr {
     width: 40px;
     height: 40px;
     border-radius: 50px;
+    margin-top: 20px;
+    margin-right: 20px;
 }
+
 
 .material-icon {
     fill: #FFFFFF;
@@ -342,28 +216,78 @@ hr {
     margin-top: 20%;
 }
 
-.post-description {
-    row-gap: 5px;
+.cmnt-img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
 }
 
-.post-date {
-    color: #5f6368;
-    font-size: 0.75rem;
+.class-content{
+    width: 100%;
+    justify-content: center;
+    
+}
+.left-content{
+    width: 50%;
+}
+.right-content{
+    width: 20%;
+    margin-left: 40px;
 }
 
-.post-copy-link {
+.assign{
+    color: green;
+}
+.head-table-yourwork{
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+
+.table-yourwork-above{
+    width: 100%;
+    height: 200px;
+    border: 2px solid #DADCE0;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.table-private-comments{
+    width: 100%;
+    height: 120px;
+    border: 2px solid #DADCE0;
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+
+.assignment-file{
+    color: #212121;
+    width: 80%;
+    margin: 10px 10%;
+    border-radius: 7px;
+    height: 40px;
+    border: 2px solid #DADCE0;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.ordered-list {
-    column-gap: 25px;
-    row-gap: 25px;
+.submit{
+    color: aliceblue;
+    background-color: #212121;
+    width: 80%;
+    margin: 15px 10%;
+    border-radius: 7px;
+    height: 40px;
+    
 }
 
-.help {
-    position: fixed;
-    bottom: 0;
-    margin-bottom: 18px;
-    margin-left: 15px;
-    fill: #5F6368;
+.pv-cmnt-logo{
+    margin: 20px 10px 10px 10px;
 }
+
+.table-private-comments > h4 {
+    margin-left: 20px;
+}
+
