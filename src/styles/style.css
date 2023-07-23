@@ -220,6 +220,7 @@ h4 {
     padding: 20px 25px 15px 15px;
     color: #FFFFFF;
     border-radius: 5px 5px 0 0;
+    height: 70px;
 }
 
 .class-title-options {
@@ -229,7 +230,7 @@ h4 {
 .class-title {
     font-size: 1.375rem;
     font-weight: 500;
-    line-height: 1.3rem;
+    line-height: .8rem;
 }
 
 .class-sub-title {

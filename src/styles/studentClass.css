@@ -313,6 +313,11 @@ hr {
     row-gap: 25px;
 }
 
+.body-right ol {
+    list-style-type: none;
+    padding: 0;
+}
+
 .post {
     border: 1px solid #DADCE0;
     border-radius: 7px;
@@ -348,6 +353,11 @@ hr {
 
 .post-copy-link {
     align-items: center;
+}
+
+.ordered-list {
+    column-gap: 25px;
+    row-gap: 25px;
 }
 
 .help {
