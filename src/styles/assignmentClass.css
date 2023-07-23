@@ -182,5 +182,112 @@ hr {
     width: 100%;
 }
 
+.left-content hr {
+    opacity: 40%;
+    z-index: 1;
+    width: 100%;
+    margin-top: 10px;
+}
 
+.head-info{
+    margin-left: 50px;
+}
+
+.grade-deadline{
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 20px 20px 0px 50px;
+    
+}
+
+.circle {
+    background-color: #5F6368;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+
+.material-icon {
+    fill: #FFFFFF;
+    width: 100%;
+    margin-top: 20%;
+}
+
+.cmnt-img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.class-content{
+    width: 100%;
+    justify-content: center;
+    
+}
+.left-content{
+    width: 50%;
+}
+.right-content{
+    width: 20%;
+    margin-left: 40px;
+}
+
+.assign{
+    color: green;
+}
+.head-table-yourwork{
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+
+.table-yourwork-above{
+    width: 100%;
+    height: 200px;
+    border: 2px solid #DADCE0;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.table-private-comments{
+    width: 100%;
+    height: 120px;
+    border: 2px solid #DADCE0;
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+
+.assignment-file{
+    color: #212121;
+    width: 80%;
+    margin: 10px 10%;
+    border-radius: 7px;
+    height: 40px;
+    border: 2px solid #DADCE0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit{
+    color: aliceblue;
+    background-color: #212121;
+    width: 80%;
+    margin: 15px 10%;
+    border-radius: 7px;
+    height: 40px;
+    
+}
+
+.pv-cmnt-logo{
+    margin: 20px 10px 10px 10px;
+}
+
+.table-private-comments > h4 {
+    margin-left: 20px;
+}
 
