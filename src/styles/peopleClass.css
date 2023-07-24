@@ -213,3 +213,27 @@ hr {
 .green{
     color: rgb(19,115,51);
 }
+
+
+.image-list{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #5F6368;
+}
+
+
+.ordered-teachers-list , .ordered-students-list {
+    column-gap: 25px;
+    row-gap: 25px;
+    list-style-type: none;
+}
+
+
+.details{
+    align-items: center;
+}
+
+.teacher-name, .student-name{
+    margin-left: 10px;
+}
