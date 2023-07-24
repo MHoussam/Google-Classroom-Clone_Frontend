@@ -22,7 +22,7 @@ function displayPosts() {
         <div class="class-up">
             <div class="class-title-options flex">
                 <div class="class-up-titles flex-column">
-                    <a href="./src/html/studentClass.html" class="link">
+                    <a href="./studentClass.html" class="link">
                         <div class="class-title">${class_student.class_name}</div>
 
                         <div class="class-sub-title">${class_student.section}</div>
