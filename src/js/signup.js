@@ -29,9 +29,9 @@ document.getElementById("submit-teacher").addEventListener("click", (event) => {
     .then(response => response.json()) 
     .then(response => {
         if (response["status"]) {
-            // window.location.href = "index.html";
             console.log(response);
             localStorage.setItem("email", registerCredentials.email);
+            window.location.href = "login.html";
         } else {
             console.log(response["message"]);
         }

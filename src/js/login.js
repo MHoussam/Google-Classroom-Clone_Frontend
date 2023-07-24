@@ -21,11 +21,12 @@ document.getElementById("submit").addEventListener("click", (event) => {
     }).then(response => response.json())
       .then(response => {
           if (response["status"]) {
-            //   window.location.href = "index.html";
-                console.log(response)
+              console.log(response)
+              localStorage.setItem("id", response.id)
+              console.log(localStorage.getItem("id"))
+              window.location.href = "classes.html";
           } else {
               console.log(response["message"]);
-              
           }
       })
       .catch(error => {

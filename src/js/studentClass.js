@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", getMaterials);
 
-let classesArray = []
+
 
 function getMaterials() {
-  fetch("http://127.0.0.1/Google-Classroom-Clone_Backend/get-materials.php")
+  fetch("http://localhost/Google-Classroom-Clone_Backend/get-materials.php")
     .then((response) => response.json())
     .then((class_material) => {
       materialsArray = class_material;
@@ -62,7 +62,7 @@ function displayMaterials() {
 }
 
 function getAssignments() {
-    fetch("http://127.0.0.1/Google-Classroom-Clone_Backend/get-assignments.php")
+    fetch("http://localhost/Google-Classroom-Clone_Backend/get-assignments.php")
       .then((response) => response.json())
       .then((assignment) => {
         assignmentsArray = assignment;
@@ -114,6 +114,28 @@ function displayAssignments() {
     </a>
     `;
     assignmentsList.appendChild(listItem)
-    })
-  
+    getMaterials();
+
+})
+
+function getMaterials() {
+    fetch("http://localhost/Google-Classroom-Clone_Backend/get-student-classes.php")
+      .then((response) => response.json())
+      .then((class_material) => {
+        materialsArray = class_material;
+      })
+      .catch((error) => console.log(error))
+  }
 }
+
+
+function getLink(){
+    fetch("http://localhost/Google-Classroom-Clone_Backend/get-student-classes.php")
+      .then((response) => response.json())
+      .then((class_student) => {
+        classesArray = class_student;
+        document.getElementById("meet-link").href = `https://meet.google.com/${class_student[0].meet_link}`;
+      })
+      .catch((error) => console.log(error))
+}
+getLink();

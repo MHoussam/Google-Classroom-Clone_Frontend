@@ -1,16 +1,32 @@
 document.addEventListener("DOMContentLoaded", getClasses);
 
 let classesArray = []
+const id = localStorage.getItem("id");
 
+const getClassesFromID = {
+    student_id : id
+};
 function getClasses() {
-  fetch("http://localhost/Google-Classroom-Clone_Backend/get-student-classes.php")
+  fetch("http://localhost/Google-Classroom-Clone_Backend/get-student-classes.php", {
+    method: "POST",
+    mode: 'cors',
+    cache: "no-cache",
+    origin: "http://localhost:5500",
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(getClassesFromID), 
+})
     .then((response) => response.json())
     .then((class_student) => {
       classesArray = class_student;
+      console.log(class_student)
       displayPosts()
     })
     .catch((error) => console.log(error))
 }
+console.log(getClassesFromID)
 
 function displayPosts() {
   const classesList = document.getElementById("classes");
@@ -75,5 +91,7 @@ function displayPosts() {
     `;
     classesList.appendChild(listItem)
   })
-
+  
 }
+
+
