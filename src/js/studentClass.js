@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", getMaterials);
 
-let classesArray = []
-
 function getMaterials() {
-  fetch("http://127.0.0.1/Google-Classroom-Clone_Backend/get-materials.php")
+  fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-materials.php")
     .then((response) => response.json())
     .then((class_material) => {
       materialsArray = class_material;
@@ -62,7 +60,7 @@ function displayMaterials() {
 }
 
 function getAssignments() {
-    fetch("http://127.0.0.1/Google-Classroom-Clone_Backend/get-assignments.php")
+    fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-assignments.php")
       .then((response) => response.json())
       .then((assignment) => {
         assignmentsArray = assignment;
