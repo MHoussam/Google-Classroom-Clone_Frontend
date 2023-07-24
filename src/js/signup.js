@@ -1,3 +1,5 @@
+let Credential;
+
 document.getElementById("submit-teacher").addEventListener("click", (event) => {
     event.preventDefault();
     const first_name = document.getElementById("user-f-name").value;
@@ -29,7 +31,7 @@ document.getElementById("submit-teacher").addEventListener("click", (event) => {
         if (response["status"]) {
             // window.location.href = "index.html";
             console.log(response);
-
+            localStorage.setItem("email", registerCredentials.email);
         } else {
             console.log(response["message"]);
         }
@@ -70,6 +72,7 @@ document.getElementById("submit-student").addEventListener("click", (event) => {
         if (response["status"]) {
             // window.location.href = "index.html";
             console.log(response);
+            localStorage.setItem("email", registerCredentials.email);
         } else {
             console.log(response["message"]);
         }
@@ -79,3 +82,4 @@ document.getElementById("submit-student").addEventListener("click", (event) => {
     });
 }
 );
+
