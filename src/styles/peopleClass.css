@@ -1,0 +1,215 @@
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.link, .link-btn {
+    text-decoration: none;
+}
+
+.link-bk {
+    text-decoration: none;
+    color: rgba(0,0,0,.87);
+}
+
+.link-bk:hover {
+    text-decoration: underline;
+}
+
+.font-sans-serif {
+    color: #5F6368;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+.font-google-sans {
+    font-family: "Google Sans", "Roboto", Arial, sans-serif;
+    font-size: .875rem;
+    letter-spacing: .0107142857em;
+    font-weight: 300;
+    text-transform: none;
+}
+
+.color-white {
+    color: #FFFFFF;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+.margin {
+    margin: 0;
+}
+
+.width1 {
+    width: 25%;
+}
+
+.width2 {
+    width: 37.5%;
+}
+
+.width3 {
+    width: 33.33%;
+}
+
+.header {
+    padding-left: 2%;
+    padding-top: 1.5%;
+    padding-bottom: 1%;
+    margin-top: -.6%;
+    position: fixed;
+    background-color: #FFFFFF;
+    width: 98%;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.header-left {
+    column-gap: 15px;
+}
+
+.hamburger-menu {
+    padding-top: 2%;
+}
+
+.menu {
+    row-gap: 3px;
+}
+
+.menu-line {
+    width: 20px;
+    height: 2px;
+    background-color: #212121;
+}
+
+.header-google-classroom {
+    margin-top: .5%;
+    column-gap: 5px;
+}
+
+.header-classroom-title {
+    font-size: 15px;
+}
+
+.header-classroom-sub-title {
+    font-size: 12px;
+}
+
+.header-middle {
+    justify-content: center;
+    align-items: center;
+    color: #5F6368;
+}
+
+.header-middle-category {
+    justify-content: center;
+}
+
+.header-right {
+    column-gap: 30px;    
+    align-items: center;
+    padding-right: 1%;
+    justify-content: flex-end;
+}
+
+.header-join-classes {
+    margin-top: 4%;
+}
+
+.header-join-classes-hor {
+    width: 16px;
+    height: 2px;
+    background-color: #212121;
+}
+
+.header-join-classes-ver {
+    width: 2px;
+    height: 16px;
+    background-color: #212121;
+    position: absolute;
+    margin-top: -.65%;
+    margin-left: .5%;
+}
+
+.header-google-apps {
+    align-items: center;
+    row-gap: 2px;
+}
+
+.header-google-apps-row {
+    column-gap: 2px;
+}
+
+.google-apps-circle {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #5F6368;
+}
+
+.header-google-account {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #5F6368;
+}
+
+hr {
+    margin-top: 4.8%;
+    opacity: 40%;
+    z-index: 1;
+    width: 100%;
+}
+
+.content-class{
+    align-items: center;
+    gap: 10px;
+}
+
+.teachers-class{
+    width: 50%;
+    align-items: flex-start;
+    
+}
+
+.teachers-class h1{
+    padding: 0px 20px;
+}
+
+.classmates{
+    width: 50%;
+    
+}
+
+.classmates-header{
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.content-hr{
+    width: 100%;
+    margin-top: 0px;
+}
+
+.green{
+    color: rgb(19,115,51);
+}
