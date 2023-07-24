@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", getMaterials);
 
+let classesArray = []
+const id = localStorage.getItem("id");
+
+const getClassesFromID = {
+    student_id : id
+};
 
 
 function getMaterials() {
@@ -118,8 +124,41 @@ function displayAssignments() {
 
 })
 
+
+function getLink(){
+    fetch("http://localhost/Google-Classroom-Clone_Backend/get-student-classes.php", {
+        method: "POST",
+        mode: 'cors',
+        cache: "no-cache",
+        origin: "http://localhost:5500",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(getClassesFromID), 
+    })
+      .then((response) => response.json())
+      .then((class_student) => {
+        classesArray = class_student;
+        console.log(class_student[0].meet_link)
+        document.getElementById("meet-link").href = `https://meet.google.com/${class_student[0].meet_link}`;
+      })
+      .catch((error) => console.log(error))
+}
+getLink();
+
 function getMaterials() {
-    fetch("http://localhost/Google-Classroom-Clone_Backend/get-student-classes.php")
+    fetch("http://localhost/Google-Classroom-Clone_Backend/get-student-classes.php", {
+        method: "POST",
+        mode: 'cors',
+        cache: "no-cache",
+        origin: "http://localhost:5500",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(getClassesFromID), 
+    })
       .then((response) => response.json())
       .then((class_material) => {
         materialsArray = class_material;
@@ -129,13 +168,3 @@ function getMaterials() {
 }
 
 
-function getLink(){
-    fetch("http://localhost/Google-Classroom-Clone_Backend/get-student-classes.php")
-      .then((response) => response.json())
-      .then((class_student) => {
-        classesArray = class_student;
-        document.getElementById("meet-link").href = `https://meet.google.com/${class_student[0].meet_link}`;
-      })
-      .catch((error) => console.log(error))
-}
-getLink();
