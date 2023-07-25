@@ -4,7 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../assets/images/google-classroom-icon.png" type="image/png">
-        <link rel="stylesheet" href="../styles/studentClass.css" type="text/css">
+        <link rel="stylesheet" href="../styles/studentClass.css" type="text/css">        
+        <link rel="stylesheet" href="../styles/teacherClass.css" type="text/css">
         <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
         <title>Classes</title>
     </head>
@@ -24,7 +25,7 @@
                 </div>
 
                 <div class="header-google-classroom flex-column link-bk">
-                    <a href="./classes.html" class="link-bk">
+                    <a href="./tClasses.html" class="link-bk">
                         <h2 class="header-classroom-title font-google-sans margin bold">
                             FSW 23& 24 | Tech
                         </h2>
@@ -135,7 +136,7 @@
                         </div>
 
                         <div class="join-btn">
-                            <a target="_blank" class="link-btn" id="join">
+                            <a href="" class="link-btn">
                                 <div class="join-text flex font-google-sans bold pointer">
                                     Join
                                 </div>
@@ -165,12 +166,30 @@
                 </div>
 
                 <div class="body-right flex-column">
+                    <div class="posts flex-column">
+                        <div class="announce pointer font-google-sans bold" id="announce">
+                            <div class="annunce-post">
+                                Announce something to your class.
+                            </div>
+
+                            <div class="postText">
+                                <textarea  type="text" id="postText" class="post-input" rows="4" cols="50"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="action-btns flex">
+                            <button id="cancel">Cancel</button>
+
+                            <button id="post">Post</button>
+                        </div>
+                    </div>
+
                     <ol  id="posts" class="ordered-list flex-column margin">
                     </ol>
                 </div>
             </div>
         </div>
 
-        <script src="../js/studentClass.js"></script>
+        <script src="../js/teacherClass.js"></script>
     </body>
 </html>

@@ -189,6 +189,7 @@ h4 {
 .ordered-list {
     column-gap: 25px;
     row-gap: 25px;
+    width: 75%;
 }
 
 .class {

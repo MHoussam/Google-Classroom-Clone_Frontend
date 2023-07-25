@@ -7,11 +7,11 @@ document.getElementById("submit").addEventListener("click", (event) => {
           email: email,
           password: password
       };
-      fetch('http://localhost/Google-Classroom-Clone_Backend/validate-student.php', { 
+      fetch('http://127.0.0.1/Google-Classroom-Clone_Backend/validate-student.php', { 
         method: "POST",
         mode: 'cors',
         cache: "no-cache",
-        origin: "http://localhost:5500",
+        origin: "http://127.0.0.1:5500",
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
@@ -20,9 +20,12 @@ document.getElementById("submit").addEventListener("click", (event) => {
         
     }).then(response => response.json())
       .then(response => {
-          if (response["status"]) {
-            //   window.location.href = "index.html";
-                console.log(response)
+          if (response["status"]) {            
+            console.log('status: ' + response.status)
+            console.log('response: ' + response.id)
+            localStorage.setItem("id", response.id)
+            console.log('id: ' + localStorage.getItem("id"))
+            window.location.href = "./src/html/classes.html";
           } else {
               console.log(response["message"]);
               
