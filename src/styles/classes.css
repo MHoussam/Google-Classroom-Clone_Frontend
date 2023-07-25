@@ -479,7 +479,7 @@ h4 {
     gap: 20px;
     margin-top: 2rem;
   }
-  #cancel, #create-class {
+  #cancel, #create-class, .cancel {
     color: rgb(95, 98, 102);
     font-weight: 600;
     background-color: #fff;
