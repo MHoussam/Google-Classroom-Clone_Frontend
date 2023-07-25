@@ -1,0 +1,27 @@
+.announce {
+    width: 100%;
+    border: 2px solid #DADCE0;
+    border-radius: 5px;
+    justify-content: center;
+    padding: 2% 4%;
+    font-size: 12px;
+}
+
+.post-input {
+    margin-top: 2%;
+    border: 0 solid transparent;
+    width: 107%;
+    height: 100px;
+    margin-left: -3.8%;
+    resize: none;
+}
+
+.post-input.focus {
+    outline: none;
+    border-color: transparent;
+  }
+
+.action-btns {
+    margin-top: 1%;
+    justify-content: space-around;
+}

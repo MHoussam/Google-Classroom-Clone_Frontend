@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../assets/images/google-classroom-icon.png" type="image/png">
+        <link rel="stylesheet" href="../styles/studentClass.css" type="text/css">        
+        <link rel="stylesheet" href="../styles/teacherClass.css" type="text/css">
+        <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+        <title>Classes</title>
+    </head>
+    <body>
+        <header class="header flex">
+            <div class="header-left flex width2">
+                <div class="hamburger-menu flex">
+                    <abbr title="Main Menu">
+                        <div class="menu flex-column pointer">
+                            <div class="menu-line"></div>
+
+                            <div class="menu-line"></div>
+
+                            <div class="menu-line"></div>
+                        </div>
+                    </abbr>
+                </div>
+
+                <div class="header-google-classroom flex-column link-bk">
+                    <a href="./tClasses.html" class="link-bk">
+                        <h2 class="header-classroom-title font-google-sans margin bold">
+                            FSW 23& 24 | Tech
+                        </h2>
+
+                        <h2 class="header-classroom-sub-title font-google-sans margin">
+                            Full Stack Web Development Bootcamp
+                        </h2>
+                    </a>
+                </div>
+            </div>
+
+            <div class="header-middle flex width1 font-google-sans bold pointer">
+                <div class="header-middle-category width3 flex">
+                    Stream
+                </div>
+
+                <div class="header-middle-category width3 flex">
+                    Classwork
+                </div>
+
+                <div class="header-middle-category width3 flex">
+                    People
+                </div>
+            </div>
+
+            <div class="header-right flex width2">
+                <abbr title="Google Apps">
+                    <div class="header-google-apps flex-column pointer">
+                        <div class="header-google-apps-row flex">
+                            <div class="google-apps-circle"></div>
+
+                            <div class="google-apps-circle"></div>
+
+                            <div class="google-apps-circle"></div>
+                        </div>
+                        
+                        <div class="header-google-apps-row flex">
+                            <div class="google-apps-circle"></div>
+
+                            <div class="google-apps-circle"></div>
+                            
+                            <div class="google-apps-circle"></div>
+                        </div>
+
+                        <div class="header-google-apps-row flex">
+                            <div class="google-apps-circle"></div>
+
+                            <div class="google-apps-circle"></div>
+                            
+                            <div class="google-apps-circle"></div>
+                        </div>
+                    </div>
+                </abbr>
+                
+                <abbr title="Google Account">
+                    <div class="header-google-account pointer"></div>
+                </abbr>
+        </header>
+
+        <hr>
+
+        <div class="class-content flex-column">
+            <div class="class-body-header">
+                <div class="class-image-container font-google-sans bold color-white">
+                    <img src="../assets/images/fcs.png" type="image/png" class="class-image">
+
+                    <div class="image-content flex">
+                        <div class="image-text flex-column">
+                            <div class="image-title">
+                                FSW 23& 24 | Tech
+                            </div>
+
+                            <div class="image-sub-title">
+                                Full Stack Web Development Bootcamp
+                            </div>
+                        </div>
+
+                        <div class="info flex">
+                            <svg focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="class-body flex">
+                <div class="body-left flex-column">
+                    <div class="join-meet flex-column">
+                        <div class="meet-copy-link flex">
+                            <div class="meet flex">
+                                <img src="../assets/images/google-meet.png" class="meet-icon">
+
+                                <div class="meet-text font-google-sans bold">
+                                    Meet
+                                </div>
+                            </div>
+
+                            <div class="copy-link flex">
+                                <div class="copy-link-circles flex-column pointer">
+                                    <div class="google-apps-circle"></div>
+
+                                    <div class="google-apps-circle"></div>
+            
+                                    <div class="google-apps-circle"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="join-btn">
+                            <a href="" class="link-btn">
+                                <div class="join-text flex font-google-sans bold pointer">
+                                    Join
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="upcoming flex-column font-google-sans bold">
+                        <div class="upcoming-title">
+                            Upcoming
+                        </div>
+
+                        <div class="due flex-column">
+                            <div class="due-date">
+                                Due Wednesday
+                            </div>
+
+                            <div class="due-hour">
+                                10:00 AM – Google Classroom Clone
+                            </div>
+                        </div>
+
+                        <div class="view-all pointer flex">
+                            View all
+                        </div>
+                    </div>
+                </div>
+
+                <div class="body-right flex-column">
+                    <div class="posts flex-column">
+                        <div class="announce pointer font-google-sans bold" id="announce">
+                            <div class="annunce-post">
+                                Announce something to your class.
+                            </div>
+
+                            <div class="postText">
+                                <textarea  type="text" id="postText" class="post-input" rows="4" cols="50"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="action-btns flex">
+                            <button id="cancel">Cancel</button>
+
+                            <button id="post">Post</button>
+                        </div>
+                    </div>
+
+                    <ol  id="posts" class="ordered-list flex-column margin">
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/teacherClass.js"></script>
+    </body>
+</html>
