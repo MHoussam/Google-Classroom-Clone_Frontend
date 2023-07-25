@@ -28,7 +28,7 @@ function getClasses() {
     .then((response) => response.json())
     .then((class_student) => {
             classesArray = class_student;
-            if(class_student.status=="1"){
+            if(class_student.status!="0"){
                 displayPosts()
             } else {
                 console.log(class_student.error);
