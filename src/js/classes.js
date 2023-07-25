@@ -1,12 +1,16 @@
 document.addEventListener("DOMContentLoaded", getClasses);
 
-let classesArray = []
+let classesArray = [];
 const id = localStorage.getItem("id");
 const getClassesFromID = {
     student_id : id
 };
 
 function getClasses() {
+    localStorage.setItem("material_id", 0);
+    localStorage.setItem("assignment_id", 0);
+    localStorage.setItem("class_id", 0);
+
   fetch("http://127.0.0.1/Google-Classroom-Clone_Backend/get-student-classes.php", {
         method: "POST",
         mode: 'cors',
@@ -21,7 +25,7 @@ function getClasses() {
     .then((response) => response.json())
     .then((class_student) => {
       classesArray = class_student;
-      console.log(class_student)
+      console.log("class_student: " + class_student)
       displayPosts()
     })
     .catch((error) => console.log(error))
@@ -33,12 +37,13 @@ function displayPosts() {
   classesList.innerHTML = "";
   classesArray.forEach((class_student) => {
     const listItem = document.createElement("li");
+    console.log(class_student.class_name)
     listItem.innerHTML = `
     <div class="class flex-column pointer">
         <div class="class-up">
             <div class="class-title-options flex">
                 <div class="class-up-titles flex-column">
-                    <a href="./studentClass.html" class="link" onclick="getClassId(${class_student.class_id})" >
+                    <a href="./studentClass.html" class="link" onclick="getClassId(${class_student.class_id})">
                         <div class="class-title">${class_student.class_name}</div>
 
                         <div class="class-sub-title">${class_student.section}</div>

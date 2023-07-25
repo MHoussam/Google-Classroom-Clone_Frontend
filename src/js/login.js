@@ -25,7 +25,7 @@ document.getElementById("submit").addEventListener("click", (event) => {
             console.log('response: ' + response.id)
             localStorage.setItem("id", response.id)
             console.log('id: ' + localStorage.getItem("id"))
-            window.location.href = "classes.html";
+            window.location.href = "./src/html/classes.html";
           } else {
               console.log(response["message"]);
               

@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", getMaterials);
 
-const class_id = localStorage.getItem("class_id");
-
+let classesArray = [] //const class_id = localStorage.getItem("class_id");
+const id = localStorage.getItem("class_id");
 const getClassesFromID = {
-    class_id: class_id
+    class_id: id
 };
 
 function getMaterials() {
@@ -21,10 +21,12 @@ function getMaterials() {
     .then((response) => response.json())
     .then((class_material) => {
       materialsArray = class_material;
+      console.log(class_material)
       displayMaterials()
     })
     .catch((error) => console.log(error))
 }
+console.log(getClassesFromID)
 
 function displayMaterials() {
   const materialsList = document.getElementById("posts");
@@ -140,16 +142,40 @@ function displayAssignments() {
     `;
     assignmentsList.appendChild(listItem)
     }) 
+    getLink();
 }
 
 function getMaterialId (material_id) {
-    //console.log("the captain: " + class_id);
+    console.log("the captain material: " + material_id);
     localStorage.setItem("material_id", material_id);
     console.log('material_id: ' + localStorage.getItem("material_id"));
 }
 
 function getAssignmentId (assignment_id) {
-    //console.log("the captain: " + class_id);
+    console.log("the captain assignment: " + assignment_id);
     localStorage.setItem("assignment_id", assignment_id);
     console.log('assignment_id: ' + localStorage.getItem("assignment_id"));
+}
+
+function getLink(){
+    fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-link.php", {
+        method: "POST",
+        mode: 'cors',
+        cache: "no-cache",
+        origin: "http://localhost:5500",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(getClassesFromID), 
+    })
+      .then((response) => response.json())
+      .then((class_link) => {
+        linksArray = class_link;
+        linksArray.forEach((class_link) => {
+            console.log("what " + class_link.meet_link)
+            document.getElementById("join").href = `https://meet.google.com/${class_link.meet_link}`;
+        }) 
+      })
+      .catch((error) => console.log(error))
 }
