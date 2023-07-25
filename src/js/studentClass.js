@@ -1,22 +1,37 @@
 document.addEventListener("DOMContentLoaded", getMaterials);
 
 let classesArray = [] //const class_id = localStorage.getItem("class_id");
-const id = localStorage.getItem("class_id");
-const getClassesFromID = {
-    class_id: id
-};
+const class_id = localStorage.getItem("class_id");
+const token_value = localStorage.getItem("token_value");
+// const getClassesFromID = {
+//     class_id: id
+// };
 
 function getMaterials() {
-  fetch("http://127.0.0.1/Google-Classroom-Clone_Backend/get-materials.php")
+  fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-materials.php", {
+    method: "POST",
+    mode: 'cors',
+    cache: "no-cache",
+    origin: "http://127.0.0.1:5500",
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(getClassesFromID),
+})
     .then((response) => response.json())
     .then((class_material) => {
       materialsArray = class_material;
-      console.log(class_material)
-      displayMaterials()
+      if(class_material.status!="0"){
+        console.log(class_material)
+        displayMaterials()
+      } else {
+        console.log(class_material.error);
+    }
     })
     .catch((error) => console.log(error))
 }
-console.log(getClassesFromID)
+//console.log(getClassesFromID)
 
 function displayMaterials() {
   const materialsList = document.getElementById("posts");
@@ -68,7 +83,7 @@ function displayMaterials() {
 }
 
 function getAssignments() {
-    fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-assignments.php", {
+    fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-assignments.php?class_id=${class_id}`, {
         method: "POST",
         mode: 'cors',
         cache: "no-cache",
@@ -77,13 +92,20 @@ function getAssignments() {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(getClassesFromID),
+        body: JSON.stringify({
+            "token_value":token_value
+        })
     })
-      .then((response) => response.json())
-      .then((class_assignment) => {
-        assignmentsArray = class_assignment;
-        displayAssignments()
-      })
+        .then((response) => response.json())
+        .then((class_assignment) => {
+          assignmentsArray = class_assignment;
+          if(class_assignment.status!="0"){
+            //console.log(class_material)
+            displayAssignments()
+          } else {
+            console.log(class_assignment.error);
+        }
+        })
       .catch((error) => console.log(error))
 }
   
@@ -111,7 +133,7 @@ function displayAssignments() {
                     </div>
                     
                     <div class="post-date">
-                        ${class_assignment.due_date}
+                        ${class_assignment.date_of_upload}
                     </div>
                 </div>
             </div>
@@ -148,7 +170,7 @@ function getAssignmentId (assignment_id) {
 }
 
 function getLink(){
-    fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-link.php", {
+    fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-google-meet.php?class_id=${class_id}`, {
         method: "POST",
         mode: 'cors',
         cache: "no-cache",
@@ -157,15 +179,21 @@ function getLink(){
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(getClassesFromID), 
+        body: JSON.stringify({
+            "token_value":token_value
+        })
+        
     })
       .then((response) => response.json())
       .then((class_link) => {
         linksArray = class_link;
-        linksArray.forEach((class_link) => {
+        if(class_link.status!="0"){
             console.log("what " + class_link.meet_link)
             document.getElementById("join").href = `https://meet.google.com/${class_link.meet_link}`;
-        }) 
+        } else {
+                console.log(class_link.error);
+        }
+         
       })
       .catch((error) => console.log(error))
 }
