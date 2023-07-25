@@ -2,13 +2,15 @@ document.addEventListener("DOMContentLoaded", getMaterial);
 
 const material_id = localStorage.getItem("material_id");
 
-const getClassesFromID = {
-  material_id: material_id
-};
+const class_id = localStorage.getItem("class_id");
+const token_value = localStorage.getItem("token_value");
+// const getClassesFromID = {
+//   material_id: material_id
+// };
 
 function getMaterial() {
   console.log(material_id);
-  fetch("http://localhost/Google-Classroom-Clone_Backend/get-material.php", {
+  fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-material-info.php?material_id=${material_id}`, {
     method: "POST",
     mode: 'cors',
     cache: "no-cache",
@@ -17,20 +19,24 @@ function getMaterial() {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(getClassesFromID),
+    body: JSON.stringify({
+      "token_value":token_value
+  })
   })
   .then((response) => response.json())
   .then((class_material) => {
-    materialsArray = class_material;
-    displayMaterial()
+    if(class_material.status!="0"){
+      displayMaterial(class_material)
+    } else {
+        console.log(class_material.error);
+    }
   })
   .catch((error) => console.log(error))
 }
 
-function displayMaterial() {
+function displayMaterial(class_material) {
   const materialsList = document.getElementById("material");
   materialsList.innerHTML = "";
-  materialsArray.forEach((class_material) => {
     const listItem = document.createElement("div");
     listItem.innerHTML = `
     <div class="head-left-content">
@@ -45,7 +51,7 @@ function displayMaterial() {
       </div>
       
       <div class="head-info">
-        ${class_material.teacher_id} • ${class_material.date_of_upload}
+      ${class_material.first_name} ${class_material.last_name} • ${class_material.date_of_upload}
       </div>
     </div>
 
@@ -62,5 +68,4 @@ function displayMaterial() {
     </div>
     `;
     materialsList.appendChild(listItem)
-  })
 }

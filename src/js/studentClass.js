@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", getMaterials);
 let classesArray = [] //const class_id = localStorage.getItem("class_id");
 const class_id = localStorage.getItem("class_id");
 const token_value = localStorage.getItem("token_value");
+const urlParams = new URLSearchParams(window.location.search);
+const class_name = urlParams.get('class_name');
+
+const section = urlParams.get('section');
+console.log(class_name + " " + section)
 // const getClassesFromID = {
 //     class_id: id
 // };
@@ -54,7 +59,7 @@ function displayMaterials() {
                 
                 <div class="post-description flex-column">
                     <div class="post-title">
-                        X posted a new material: ${class_material.title}
+                    ${class_material.first_name} ${class_material.last_name} posted a new material: ${class_material.title}
                     </div>
                     
                     <div class="post-date">
@@ -131,7 +136,7 @@ function displayAssignments() {
                 
                 <div class="post-description flex-column">
                     <div class="post-title">
-                        X posted a new assignment: ${class_assignment.title}
+                    ${class_assignment.first_name} ${class_assignment.last_name} posted a new assignment: ${class_assignment.title}
                     </div>
                     
                     <div class="post-date">

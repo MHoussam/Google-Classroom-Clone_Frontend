@@ -8,9 +8,9 @@ const token_value = localStorage.getItem("token_value");
 // };
 
 function getClasses() {
-    localStorage.setItem("material_id", 0);
-    localStorage.setItem("assignment_id", 0);
-    localStorage.setItem("class_id", 0);
+    // localStorage.setItem("material_id", 0);
+    // localStorage.setItem("assignment_id", 0);
+    // localStorage.setItem("class_id", 0);
   fetch(`http://127.0.0.1/Google-Classroom-Clone_Backend/get-student-classes.php?student_id=${id}`, {
         method: "POST",
         mode: 'cors',
@@ -48,7 +48,7 @@ function displayPosts() {
         <div class="class-up">
             <div class="class-title-options flex">
                 <div class="class-up-titles flex-column">
-                    <a href="./studentClass.html" class="link" onclick="getClassId(${class_student.class_id})">
+                    <a href="./studentClass.html?class_name=${class_student.class_name}&section=${class_student.section}" class="link" onclick="getClassId(${class_student.class_id})">
                         <div class="class-title">${class_student.class_name}</div>
 
                         <div class="class-sub-title">${class_student.section}</div>

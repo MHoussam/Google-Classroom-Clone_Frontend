@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/images/google-classroom-icon.png" type="image/png">
+    <link rel="stylesheet" href="../styles/peopleClass.css" type="text/css">
+    <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+    <title>Poeple</title>
+</head>
+<body>
+
+    <header class="header flex">
+        <div class="header-left flex width2">
+            <div class="hamburger-menu flex">
+                <abbr title="Main Menu">
+                    <div class="menu flex-column pointer">
+                        <div class="menu-line"></div>
+
+                        <div class="menu-line"></div>
+
+                        <div class="menu-line"></div>
+                    </div>
+                </abbr>
+            </div>
+
+            <div class="header-google-classroom flex-column link-bk">
+                <a href="../../index.html" class="link-bk">
+                    <h2 class="header-classroom-title font-google-sans margin bold">
+                        FSW 23& 24 | Tech
+                    </h2>
+
+                    <h2 class="header-classroom-sub-title font-google-sans margin">
+                        Full Stack Web Development Bootcamp
+                    </h2>
+                </a>
+            </div>
+        </div>
+
+        <div class="header-middle flex width1 font-google-sans bold pointer">
+            <div class="header-middle-category width3 flex">
+                Stream
+            </div>
+
+            <div class="header-middle-category width3 flex">
+                Classwork
+            </div>
+
+            <div class="header-middle-category width3 flex bold">
+                People
+            </div>
+        </div>
+
+        <div class="header-right flex width2">
+            <abbr title="Google Apps">
+                <div class="header-google-apps flex-column pointer">
+                    <div class="header-google-apps-row flex">
+                        <div class="google-apps-circle"></div>
+
+                        <div class="google-apps-circle"></div>
+
+                        <div class="google-apps-circle"></div>
+                    </div>
+                    
+                    <div class="header-google-apps-row flex">
+                        <div class="google-apps-circle"></div>
+
+                        <div class="google-apps-circle"></div>
+                        
+                        <div class="google-apps-circle"></div>
+                    </div>
+
+                    <div class="header-google-apps-row flex">
+                        <div class="google-apps-circle"></div>
+
+                        <div class="google-apps-circle"></div>
+                        
+                        <div class="google-apps-circle"></div>
+                    </div>
+                </div>
+            </abbr>
+            
+            <abbr title="Google Account">
+                <div class="header-google-account pointer"></div>
+            </abbr>
+    </header>
+
+    <hr>
+
+    <div class="content-class flex-column">
+
+        <div class="teachers-class flex-column ">
+            <h1 class="green">Teachers</h1>
+            <hr class="content-hr green">
+            <div class="body-above flex-column">
+                <ol  id="teachers" class="ordered-teachers-list flex-column margin">
+                    
+                </ol>
+            </div>
+
+        </div>
+        <div class="classmates flex-column">
+            
+            <div class="classmates-header flex">
+                <h1 class="green">Classmates</h1>
+                <h4 class="green center flex"><span class="num-students" id="num-students">0 Students</span></h4>
+            </div>
+            <hr class="content-hr green">
+            
+            <div class="body-below flex-column">
+                <ol  id="students" class="ordered-students-list flex-column margin">
+                    
+                </ol>
+            </div>
+
+            
+        </div>
+
+
+    </div>
+    
+
+
+    <script src="../js/peopleClass.js"></script>
+</body>
+</html>

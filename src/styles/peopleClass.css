@@ -29,10 +29,6 @@
     text-decoration: underline;
 }
 
-.color {
-    color: #5F6368;
-}
-
 .font-sans-serif {
     color: #5F6368;
     font-family: sans-serif;
@@ -184,194 +180,64 @@ hr {
     width: 100%;
 }
 
-.class-content {
-    margin-left: 12.5%;
-    margin-top: 2%;
-    width: 74%;
+.content-class{
+    align-items: center;
+    gap: 10px;
 }
 
-.class-image-container {
-    border-radius: 10px;
-    margin-bottom: 3.5%;
+.teachers-class{
+    width: 50%;
+    align-items: flex-start;
+    
 }
 
-.class-image {
-    width: 100%;    
-    border-radius: 10px;
+.teachers-class h1{
+    padding: 0px 20px;
 }
 
-.image-content {
-    position: relative;    
-    margin-top: -9%;
-    margin-left: 1.5%;
+.classmates{
+    width: 50%;
+    
+}
+
+.classmates-header{
     justify-content: space-between;
+    padding: 0px 20px;
 }
 
-.image-title {
-    font-size: 2.25rem;
-    font-weight: 500;
-    line-height: 2.75rem;
+.content-hr{
+    width: 100%;
+    margin-top: 0px;
 }
 
-.image-sub-title {
-    font-size: 1.375rem;
-    font-weight: 400;
-    line-height: 1.75rem;
+.green{
+    color: rgb(19,115,51);
 }
 
-.info {
-    align-items: flex-end;
-    margin-right: 1%;
-    fill: #FFFFFF;
-}
-
-.class-body {
-    column-gap: 23px;
-}
-
-.body-left {
-    width: 20%;
-    row-gap: 20px;
-}
-
-.join-meet {
-    border: 1px solid #DADCE0;
-    border-radius: 7px;
-    padding: 8.5%;
-    row-gap: 10px;
-}
-
-.meet-copy-link {
-    justify-content: space-between;
-}
-
-.meet, .meet-copy-link {
+.center {
     align-items: center;
 }
 
-.meet {
-    column-gap: 10px;
-}
 
-.copy-link-circles {
-    row-gap: 2px;
-}
-
-.meet-icon {
-    width: 25px;
-}
-
-.meet-text {
-    color: #5F6368;
-}
-
-.join-btn {
-    background-color: #137333;
-    border-radius: 5px;
-    width: 100%;
-}
-
-.join-text {
-    color: #FFFFFF;    
-    width: 100%;
-    padding: 5% 0;
-    justify-content: center;
-}
-
-.upcoming {
-    border: 1px solid #DADCE0;
-    border-radius: 7px;
-    padding: 8%;
-    row-gap: 15px;
-}
-
-.upcoming-title {
-    color: #474A4D;
-}
-
-.due {
-    row-gap: 5px;
-}
-
-.due-date {
-    color: #737373;
-    font-size: 13px;
-}
-
-.due-hour {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 0.8125rem;
-    font-weight: 400;
-}
-
-.view-all {
-    margin-top: 2%;
-    justify-content: flex-end;
-}
-
-.body-right {
-    width: 80%;
-    row-gap: 25px;
-}
-
-.body-right ol {
-    list-style-type: none;
-    padding: 0;
-}
-
-.post {
-    border: 1px solid #DADCE0;
-    border-radius: 7px;
-    padding: 2% 3%;
-    justify-content: space-between;
-}
-
-.post-left {
-    column-gap: 15px;
-}
-
-.post-title {
-    color: #3C4043;
-
-}
-
-.circle {
+.image-list{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     background-color: #5F6368;
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
 }
 
-.material-icon {
-    fill: #FFFFFF;
-    width: 100%;
-    margin-top: 20%;
-}
 
-.post-description {
-    row-gap: 5px;
-}
-
-.post-date {
-    color: #5f6368;
-    font-size: 0.75rem;
-}
-
-.post-copy-link {
-    align-items: center;
-}
-
-.ordered-list {
+.ordered-teachers-list , .ordered-students-list {
     column-gap: 25px;
     row-gap: 25px;
+    list-style-type: none;
 }
 
-.help {
-    position: fixed;
-    bottom: 0;
-    margin-bottom: 18px;
-    margin-left: 15px;
-    fill: #5F6368;
+
+.details{
+    align-items: center;
+}
+
+.teacher-name, .student-name{
+    margin-left: 10px;
 }

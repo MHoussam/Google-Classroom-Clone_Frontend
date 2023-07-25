@@ -2,13 +2,15 @@ document.addEventListener("DOMContentLoaded", getAssignment);
 
 const assignment_id = localStorage.getItem("assignment_id");
 
-const getClassesFromID = {
-    assignment_id: assignment_id
-};
+const class_id = localStorage.getItem("class_id");
+const token_value = localStorage.getItem("token_value");
+// const getClassesFromID = {
+//   material_id: material_id
+// };
 
 function getAssignment() {
   console.log(assignment_id);
-  fetch("http://localhost/Google-Classroom-Clone_Backend/get-assignment.php", {
+  fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-assignment-info.php?assignment_id=${assignment_id}`, {
     method: "POST",
     mode: 'cors',
     cache: "no-cache",
@@ -17,20 +19,24 @@ function getAssignment() {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(getClassesFromID),
+    body: JSON.stringify({
+      "token_value": token_value
+  })
   })
   .then((response) => response.json())
   .then((class_assignment) => {
-    assignmentsArray = class_assignment;
-    displayAssignment()
+    //if(class_assignment.status!="0"){
+      displayAssignment(class_assignment)
+    //} else {
+        //console.log(class_assignment.error);
+    //}
   })
   .catch((error) => console.log(error))
 }
 
-function displayAssignment() {
+function displayAssignment(class_assignment) {
   const assignmentsList = document.getElementById("assignment");
   assignmentsList.innerHTML = "";
-  assignmentsArray.forEach((class_assignment) => {
     const listItem = document.createElement("div");
     listItem.innerHTML = `
     <div class="head-left-content">
@@ -46,12 +52,12 @@ function displayAssignment() {
       </div>
       
       <div class="head-info">
-        ${class_assignment.teacher_id} • ${class_assignment.date_of_upload}
+      ${class_assignment.first_name} ${class_assignment.last_name} • ${class_assignment.date_of_upload}
       </div>
 
       <div class="grade-deadline flex">
         <div class="grade">100 points</div>
-        <div class="deadline">Due Jul 19, 5:00 PM</div>
+        <div class="deadline">Due ${class_assignment.due_date}, ${class_assignment.due_time}</div>
       </div>
     </div>
 
@@ -68,5 +74,4 @@ function displayAssignment() {
     </div>
     `;
     assignmentsList.appendChild(listItem)
-  })
 }
