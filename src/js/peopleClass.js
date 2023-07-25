@@ -1,9 +1,21 @@
 document.addEventListener("DOMContentLoaded", getTeachers);
 
 let classesArray = []
-
+const getClassesFromID = {
+  class_id: 5
+};
 function getTeachers() {
-  fetch("http://127.0.0.1/Google-Classroom-Clone_Backend/get-class-teachers.php")
+  fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-teachers.php?class_id=5" ,{
+    method: "GET",
+        mode: 'cors',
+        cache: "no-cache",
+        origin: "http://127.0.0.1:5500",
+        headers: {
+            'Accept': 'application/json',
+            
+        }
+        
+    })
     .then((response) => response.json())
     .then((class_teacher) => {
       teachersArray = class_teacher;
@@ -34,7 +46,7 @@ function displayTeachers() {
 }
 
 function getStudents() {
-  fetch("http://127.0.0.1/Google-Classroom-Clone_Backend/get-class-students.php")
+  fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-students.php")
     .then((response) => response.json())
     .then((class_student) => {
       studentsArray = class_student;
