@@ -115,7 +115,7 @@ button{
 #create-account{
     margin-bottom: 0;
 }
-.submit, .save-info{
+.submitStudent, .submitTeacher, .save-info{
     width: 120px;
     height: 2.5rem;
     border: 0;
@@ -123,4 +123,8 @@ button{
     border-radius: .3rem;
     color: #fff;
     font-size: 14px;
+}
+
+.signup-link{
+    justify-content: center;
 }

@@ -28,12 +28,12 @@ document.getElementById("submit-teacher").addEventListener("click", (event) => {
     })
     .then(response => response.json()) 
     .then(response => {
-        if (response["status"]) {
+        if (response["status"] != 0) {
             // window.location.href = "index.html";
             console.log(response);
             localStorage.setItem("email", registerCredentials.email);
         } else {
-            console.log(response["message"]);
+            console.log(response["error"]);
         }
     })
     .catch(error => {
@@ -74,7 +74,7 @@ document.getElementById("submit-student").addEventListener("click", (event) => {
             console.log(response);
             localStorage.setItem("email", registerCredentials.email);
         } else {
-            console.log(response["message"]);
+            console.log(response["error"]);
         }
     })
     .catch(error => {
