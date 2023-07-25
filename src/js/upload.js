@@ -168,11 +168,8 @@ async function uploadFile() {
 			//document.getElementById('content').innerHTML += fileLink;
 		};
 		xhr.send(form);
+
+		let assign = document.getElementById('assign')
+		assign.textContent = 'Submitted';
 	}
 }
-
-// 1IdI0EHKDoCBUhiKwA7iJ_IdMMTQTi_5Y
-
-//1im2wuAY6s2fwvYS6vZJYE1EA2M9N3ZKB
-
-// 1U28NYc8ElvkvwzbX3oNNnIVbqzPJUvVi
