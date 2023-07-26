@@ -300,3 +300,23 @@ h4 {
     fill: #5F6368;
 }
 
+.content-body{
+    justify-content: space-between;
+}
+
+.materials-assignments{
+    width: 20%;
+    margin-right: 10px;
+}
+
+.assignments{
+    border: 2px solid #DADCE0;
+    height: 200px;
+    border-radius: 7px;
+}
+
+.materials{
+    border: 2px solid #DADCE0;
+    height: 200px;
+    border-radius: 7px;
+}

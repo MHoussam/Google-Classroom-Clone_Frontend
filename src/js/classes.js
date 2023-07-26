@@ -111,4 +111,90 @@ function getClassId (class_id) {
     //console.log("the captain: " + class_id);
     localStorage.setItem("class_id", class_id);
     console.log('class_id: ' + localStorage.getItem("class_id"));
+
+    displayAssignmentList();
 }
+
+
+function getAssignmentList() {
+    fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-assignments.php?class_id=${class_id}`, {
+        method: "POST",
+        mode: 'cors',
+        cache: "no-cache",
+        origin: "http://127.0.0.1:5500",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "token_value":token_value
+        })
+    })
+      .then((response) => response.json())
+      .then((class_assignment_list) => {
+        assignmentsArray = class_assignment_list;
+        displayStudents()
+      })
+      .catch((error) => console.log(error))
+  }
+  
+  function displayAssignmentList() {
+    const assignmentsList = document.getElementById("assignments-list");
+    assignmentsList.innerHTML = "";
+    assignmentsArray.forEach((class_assignment_list) => {
+      const listItemAssignments = document.createElement("li");
+      listItem.innerHTML = `
+      <li>
+        <div class="">
+            ${class_assignment_list.date_of_upload} • ${class_assignment_list.first_name} ${class_assignment_list.last_name}  Posted a new assignment
+        </div>
+        <hr>
+      </li>
+      `;
+      assignmentsList.appendChild(listItemAssignments)
+    })
+    getMaterialsList()
+  }
+
+  function getMaterialsList() {
+    fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-materials.php", {
+      method: "POST",
+      mode: 'cors',
+      cache: "no-cache",
+      origin: "http://127.0.0.1:5500",
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(materials-list),
+  })
+      .then((response) => response.json())
+      .then((class_material_list) => {
+        materialsArray = class_material_list;
+        if(class_material_list.status!="0"){
+          console.log(class_material_list)
+          displayMaterials()
+        } else {
+          console.log(class_material_list.error);
+      }
+      })
+      .catch((error) => console.log(error))
+  }
+  //console.log(getClassesFromID)
+  
+  function displayMaterialsList() {
+    const materialsList = document.getElementById("materials-list");
+    materialsList.innerHTML = "";
+    materialsArray.forEach((class_material_list) => {
+      const listItem = document.createElement("li");
+      listItem.innerHTML = `
+      <div class="post-title">
+         posted a new material:${class_material.date_of_upload} • ${class_material.title}
+      </div>
+       
+      `;
+      materialsList.appendChild(listItem)
+    })
+  
+  }
+
