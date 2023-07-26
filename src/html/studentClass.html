@@ -51,6 +51,15 @@
             </div>
 
             <div class="header-right flex width2">
+                <div id="add-student">
+                    <abbr title="Create or join a class"> 
+                        <div class="header-join-classes pointer">
+                            <div class="header-join-classes-hor"></div>
+    
+                            <div class="header-join-classes-ver"></div>
+                        </div> 
+                    </abbr>
+                </div>
                 <abbr title="Google Apps">
                     <div class="header-google-apps flex-column pointer">
                         <div class="header-google-apps-row flex">
@@ -170,7 +179,33 @@
                 </div>
             </div>
         </div>
+        <div id="add-student-modal" class="modal">
 
+            <!-- Modal content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Create Class</h2>
+              </div>
+              <div class="from_container">
+                <form>
+    
+                    <div class="group">      
+                      <input type="text" required id="Student-email-input">
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label>Email</label>
+                    </div>
+                   
+                    <div class="actions">
+                        <button class="cancel" id="submit-info-changes">Invite</button>
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </div>
         <script src="../js/studentClass.js"></script>
+        <script src="../js/addStudent.js"></script>
+        
     </body>
 </html>
