@@ -183,17 +183,54 @@
                         <span class="bar"></span>
                         <label>Meeting Code</label>
                       </div>
-                    <div class="actions">
-                        <button id="cancel">Cancel</button>
-                        <button id="create-class">Create</button>
+                      <div class="flex">
+                        <div class="actions">
+                            <button onclick="cancel()">Cancel</button>
+                        </div>
+                        <div class="actions">
+                            <button >Create</button>
+                        </div>
                     </div>
                   </form>
                 </div>
             </div>
         </div>
 
+        <div id="account-info-modal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Update Your Info</h2>
+                </div>
+                
+                <div class="from_container">
+                    <form>
+                        <div class="group">      
+                            <input type="text" required id="first-name-input">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>First Name</label>
+                        </div>
+                      
+                        <div class="group">      
+                            <input type="text" required id="last-name-input">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Last Name</label>
+                        </div>
+                        
+                        <div class="actions pointer">
+                            <button class="cancel" id="Cancel pointer">Cancel</button>
+                            <button class="cancel" id="submit-info-changes pointer" onclick="sumbitInfo(e)">Change</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <script src="../js/tClasses.js"></script>
-        <script src="../js/classes.js"></script>
         <script src="../js/addClass.js"></script>        
         <script src="../js/upload.js"></script>   
         <script src="../js/changeInfo.js"></script>

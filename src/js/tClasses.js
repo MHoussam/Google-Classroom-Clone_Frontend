@@ -139,3 +139,11 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+let infoModal = document.getElementById("account-info-modal");
+function changeInfo() {
+    infoModal.style.display = "block";
+}
+function cancel() {
+    infoModal.style.display = "none";
+}
