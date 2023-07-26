@@ -163,7 +163,10 @@ textarea.addEventListener('focus', () => {
   textarea.classList.add('focus');
 });
 
-let postText = document.getElementById('postText');
+const title = document.getElementById("post-title").value;
+const description = document.getElementById("post-description").value;
+const due_date = document.getElementById("post-due-date").value;
+const due_time = document.getElementById("post-due-time").value;
 let cancel = document.getElementById('cancel');
 let post = document.getElementById('post');
 
@@ -172,7 +175,7 @@ cancel.addEventListener('click', function (){
 });
 
 post.addEventListener('click', function (){
-    fetch('http://localhost/Google-Classroom-Clone_Backend/add-post.php', {
+    fetch('http://localhost/Google-Classroom-Clone_Backend/add-assignment.php', {
         method: "POST",
         mode: 'cors',
         cache: "no-cache",
@@ -181,11 +184,16 @@ post.addEventListener('click', function (){
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(postText.value), 
+        body: JSON.stringify({
+            title: title,
+            description : description,
+            due_date : due_date,
+            due_time : due_time
+        }), 
     })
     .then(response => response.json()) 
     .then(response => {
-        if (response["status"]) {
+        if (response["status"]!=0) {
             // window.location.href = "index.html";
             console.log(response);
             //localStorage.setItem("email", registerCredentials.email);
