@@ -35,3 +35,12 @@ function createClass(e) {
           console.error('Error:', error);
       });
   }
+
+  let mod = document.getElementById("myModal");
+
+window.onclick = function(event) {
+    console.log('mod: ' + mod);
+    if (event.target == mod ) {
+        mod.style.display = "none";
+    }
+  }

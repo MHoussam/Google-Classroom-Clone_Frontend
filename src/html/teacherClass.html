@@ -186,31 +186,36 @@
                                 Announce something to your class.
                             </div>
 
-                            <div class="postText">
+                            
                                 <textarea  type="text" id="post-title" class="post-title" rows="4" cols="50" placeholder="Title" onfocus="focus()"></textarea>
-                            </div>
+                            
 
-                            <div class="postText">
+                            
                                 <textarea  type="text" id="post-description" class="post-input" rows="4" cols="50" placeholder="Description" onfocus="focus()"></textarea>
-                            </div>
+                            
                         </div>
 
                         <div class="due flex">
-                            <input type="date" id="post-due-date">
+                            <input type="date" value='' id="post-due-date">
 
-                            <input type="time" id="post-due-time" value="Due Time">
+                            <input type="time" id="post-due-time" value='' name="appt-time" step="2" >
 
                         </div>
 
                         <div class="action-btns flex">
-                            <button id="cancel">Cancel</button>
+                            <button id="cancel" onclick="cancelInfo()" class="pointer">Cancel</button>
 
-                            <button id="post" onclick="post()">Post</button>
+                            <button id="post" onclick="posting()">Post</button>
                         </div>
                     </div>
 
-                    <ol  id="posts" class="ordered-list flex-column margin">
+                    <div id="sideBySide" class="sideBySide flex">
+                    <ol  id="postsM" class="ordered-list flex-column margin">
                     </ol>
+
+                    <ol  id="postsA" class="ordered-list flex-column margin">
+                    </ol>
+                </div>
                 </div>
             </div>
         </div>
@@ -221,20 +226,20 @@
             <div class="modal-content">
               <div class="modal-header">
                 <span class="close">&times;</span>
-                <h2>Create Class</h2>
+                <h2>Add Student</h2>
               </div>
               <div class="from_container">
                 <form>
     
                     <div class="group">      
-                      <input type="text" required id="Student-email-input">
+                      <input type="text" required id="email">
                       <span class="highlight"></span>
                       <span class="bar"></span>
                       <label>Email</label>
                     </div>
                    
                     <div class="actions">
-                        <button class="cancel" id="add-student-btn" onclick=" addStudent()">Invite</button>
+                        <button class="cancel pointer"  onclick="addStudent()">Invite</button>
                     </div>
                   </form>
                 </div>

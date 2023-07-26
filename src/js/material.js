@@ -38,6 +38,7 @@ function displayMaterial(class_material) {
   const materialsList = document.getElementById("material");
   materialsList.innerHTML = "";
     const listItem = document.createElement("div");
+    console.log("class_assignment.description " + class_material.title)
     listItem.innerHTML = `
     <div class="head-left-content">
       <div class="head-h1 flex" >

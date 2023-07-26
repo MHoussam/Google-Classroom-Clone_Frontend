@@ -31,8 +31,8 @@
   }
 
 .action-btns {
-    margin-top: 1%;
-    justify-content: space-around;
+    margin-top: 1% !important;
+    justify-content: space-around !important;
 }
 
 #add-student{
@@ -226,5 +226,10 @@ font-size: 0.875rem;
 }
 
 .logout {
-    width: ;
+    width: 1px;
+    margin-right: 90%;
+}
+
+.sideBySide {
+  column-gap: 30px;
 }

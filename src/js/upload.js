@@ -86,6 +86,9 @@ function handleSignoutClick() {
 	const token = localStorage.getItem('token_value');
 	if (token !== null) {
 		localStorage.setItem('token_value', '');
+		localStorage.setItem('email', '');
+		localStorage.setItem('id', '');
+		localStorage.setItem('class_id', '');
 		window.location.href = "../../index.html";
 	}
 }

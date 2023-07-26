@@ -25,11 +25,11 @@ function getAssignment() {
   })
   .then((response) => response.json())
   .then((class_assignment) => {
-    //if(class_assignment.status!="0"){
+    if(class_assignment.status!="0"){
       displayAssignment(class_assignment)
-    //} else {
-        //console.log(class_assignment.error);
-    //}
+    } else {
+        console.log(class_assignment.error);
+    }
   })
   .catch((error) => console.log(error))
 }
@@ -38,6 +38,7 @@ function displayAssignment(class_assignment) {
   const assignmentsList = document.getElementById("assignment");
   assignmentsList.innerHTML = "";
     const listItem = document.createElement("div");
+    console.log("class_assignment.description " + class_assignment.description)
     listItem.innerHTML = `
     <div class="head-left-content">
       <div class="head-h1 flex" >

@@ -8,6 +8,8 @@ const token_value = localStorage.getItem("token_value");
 // };
 
 function getClasses() {
+    let email = localStorage.getItem("email");
+    console.log(email)
     // localStorage.setItem("material_id", 0);
     // localStorage.setItem("assignment_id", 0);
     // localStorage.setItem("class_id", 0);
@@ -47,7 +49,7 @@ function displayPosts() {
         <div class="class-up">
             <div class="class-title-options flex">
                 <div class="class-up-titles flex-column">
-                    <a href="./teacherClass.html?class_id=${class_teacher.class_id}&class_name=${class_teacher.class_name}&section=${class_teacher.section}" class="link" onclick="getClassId(${class_teacher.class_id})">
+                    <a href="./teacherClass.html" class="link" onclick="getClassId(${class_teacher.class_id})">
                         <div class="class-title">${class_teacher.class_name}</div>
 
                         <div class="class-sub-title">${class_teacher.section}</div>
@@ -106,7 +108,7 @@ function displayPosts() {
 
 //.addEventListener('onclick', getClassId);
 
-function getClassId (class_id) {
+function getClassId (class_id, section, class_name) {
     //console.log("the captain: " + class_id);
     localStorage.setItem("class_id", class_id);
     console.log('class_id: ' + localStorage.getItem("class_id"));
