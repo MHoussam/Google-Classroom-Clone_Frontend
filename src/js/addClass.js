@@ -1,4 +1,4 @@
-document.getElementById("create-class").addEventListener("click", (event) => {
+function createClass(e) {
       event.preventDefault();
       const teacher_id = localStorage.getItem("id");
       const className = document.getElementById("class-name-input").value;
@@ -34,4 +34,4 @@ document.getElementById("create-class").addEventListener("click", (event) => {
       .catch(error => {
           console.error('Error:', error);
       });
-  })
+  }
