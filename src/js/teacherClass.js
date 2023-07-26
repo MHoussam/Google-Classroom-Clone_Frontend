@@ -175,6 +175,7 @@ cancel.addEventListener('click', function (){
 });
 
 post.addEventListener('click', function (){
+    console.log("osta")
     fetch('http://localhost/Google-Classroom-Clone_Backend/add-assignment.php', {
         method: "POST",
         mode: 'cors',
