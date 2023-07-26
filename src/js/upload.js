@@ -11,7 +11,7 @@ let tokenClient;
 let gapiInited = false;
 let gisInited = false;
 
-document.getElementById('file-input').style.visibility = 'hidden';
+//document.getElementById('file-input').style.visibility = 'hidden';
 //document.getElementById('signout_button').style.visibility = 'hidden';
 
 /**
@@ -83,14 +83,10 @@ function handleAuthClick() {
  *  Sign out the user upon button click.
  */
 function handleSignoutClick() {
-	const token = gapi.client.getToken();
+	const token = localStorage.getItem('token_value');
 	if (token !== null) {
-		google.accounts.oauth2.revoke(token.access_token);
-		gapi.client.setToken('');
-		document.getElementById('content').style.display = 'none';
-		document.getElementById('content').innerHTML = '';
-		document.getElementById('file-input').value = 'Authorize';
-		document.getElementById('signout_button').style.visibility = 'hidden';
+		localStorage.setItem('token_value', '');
+		window.location.href = "../../index.html";
 	}
 }
 

@@ -37,7 +37,7 @@ function displayMaterials() {
   materialsArray.forEach((class_material) => {
     const listItem = document.createElement("li");
     listItem.innerHTML = `
-    <a href="./assignmentClass.html" class="link">
+    <a href="./materialClass.html" class="link">
         <div class="post flex font-google-sans bold pointer">
             <div class="post-left flex">
                 <div class="material flex">
@@ -50,7 +50,7 @@ function displayMaterials() {
                 
                 <div class="post-description flex-column">
                     <div class="post-title">
-                        X posted a new material: ${class_material.title}
+                    ${class_material.first_name} ${class_material.last_name} posted a new material: ${class_material.title}
                     </div>
                     
                     <div class="post-date">
@@ -110,7 +110,7 @@ function displayAssignments() {
     assignmentsArray.forEach((assignment) => {
       const listItem = document.createElement("li");
       listItem.innerHTML = `
-      <a href="./sign.html" class="link">
+      <a href="./assignmentClass.html" class="link">
         <div class="post flex font-google-sans bold pointer">
             <div class="post-left flex">
                 <div class="material flex">
@@ -123,11 +123,11 @@ function displayAssignments() {
                 
                 <div class="post-description flex-column">
                     <div class="post-title">
-                        X posted a new assignment: ${assignment.title}
+                    ${assignment.first_name} ${assignment.last_name} posted a new assignment: ${assignment.title}
                     </div>
                     
                     <div class="post-date">
-                        ${assignment.due_date}
+                        ${assignment.date_of_upload}
                     </div>
                 </div>
             </div>
@@ -159,9 +159,9 @@ function openPost() {
 
 const textarea = document.getElementById('postText');
 
-textarea.addEventListener('focus', () => {
+function focus() {
   textarea.classList.add('focus');
-});
+}
 
 const title = document.getElementById("post-title").value;
 const description = document.getElementById("post-description").value;
