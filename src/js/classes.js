@@ -48,7 +48,7 @@ function displayPosts() {
         <div class="class-up">
             <div class="class-title-options flex">
                 <div class="class-up-titles flex-column">
-                    <a href="./studentClass.html?class_name=${class_student.class_name}&section=${class_student.section}" class="link" onclick="getClassId(${class_student.class_id})">
+                    <a href="./studentClass.html?class_id=${class_student.class_id}&class_name=${class_student.class_name}&section=${class_student.section}" class="link" onclick="getClassId(${class_student.class_id})">
                         <div class="class-title">${class_student.class_name}</div>
 
                         <div class="class-sub-title">${class_student.section}</div>

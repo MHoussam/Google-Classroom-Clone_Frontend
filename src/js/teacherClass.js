@@ -1,11 +1,32 @@
 document.addEventListener("DOMContentLoaded", getMaterials);
-
+document.addEventListener("DOMContentLoaded",  getAssignments)
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('class_id');
+const token_value = localStorage.getItem("token_value");
+let assignmentsArray = [];
+let materialsArray =[];
 function getMaterials() {
-  fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-materials.php")
+    fetch(`http://127.0.0.1/Google-Classroom-Clone_Backend/get-class-materials.php?class_id=${id}`, {
+        method: "POST",
+        mode: 'cors',
+        cache: "no-cache",
+        origin: "http://127.0.0.1:5500",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "token_value":token_value
+        })
+    })
     .then((response) => response.json())
-    .then((class_material) => {
-      materialsArray = class_material;
-      displayMaterials()
+    .then((materials) => {
+        materialsArray = materials;
+            if(materialsArray.status!="0"){
+                displayMaterials()
+            } else {
+               console.log(materialsArray.error);
+            }
     })
     .catch((error) => console.log(error))
 }
@@ -55,18 +76,32 @@ function displayMaterials() {
     materialsList.appendChild(listItem)
   })
 
-  getAssignments();
-
 }
 
 function getAssignments() {
-    fetch("http://localhost/Google-Classroom-Clone_Backend/get-class-assignments.php")
-      .then((response) => response.json())
-      .then((assignment) => {
-        assignmentsArray = assignment;
-        displayAssignments()
-      })
-      .catch((error) => console.log(error))
+    fetch(`http://127.0.0.1/Google-Classroom-Clone_Backend/get-class-assignments.php?class_id=${id}`, {
+        method: "POST",
+        mode: 'cors',
+        cache: "no-cache",
+        origin: "http://127.0.0.1:5500",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "token_value":token_value
+        })
+    })
+    .then((response) => response.json())
+    .then((assignments) => {
+        assignmentsArray = assignments;
+            if(assignments.status!="0"){
+                displayAssignments()
+            } else {
+               console.log(assignments.error);
+            }
+    })
+    .catch((error) => console.log(error))
 }
   
 function displayAssignments() {

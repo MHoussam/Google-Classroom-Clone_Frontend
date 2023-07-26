@@ -27,12 +27,11 @@ function getClasses() {
     .then((response) => response.json())
     .then((class_teacher) => {
             classesArray = class_teacher;
-            console.log(class_teacher.error);
-            //if(class_teacher.status!="0"){
+            if(class_teacher.status!="0"){
                 displayPosts()
-            //} else {
-              //  console.log(class_teacher.error);
-            //}
+            } else {
+               console.log(class_teacher.error);
+            }
     })
     .catch((error) => console.log(error))
 }
@@ -48,7 +47,7 @@ function displayPosts() {
         <div class="class-up">
             <div class="class-title-options flex">
                 <div class="class-up-titles flex-column">
-                    <a href="./teacherClass.html?class_name=${class_teacher.class_name}&section=${class_teacher.section}" class="link" onclick="getClassId(${class_teacher.class_id})">
+                    <a href="./teacherClass.html?class_id=${class_teacher.class_id}&class_name=${class_teacher.class_name}&section=${class_teacher.section}" class="link" onclick="getClassId(${class_teacher.class_id})">
                         <div class="class-title">${class_teacher.class_name}</div>
 
                         <div class="class-sub-title">${class_teacher.section}</div>

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", getMaterials);
+document.addEventListener("DOMContentLoaded", getAssignments);
 
 let classesArray = [] //const class_id = localStorage.getItem("class_id");
 const class_id = localStorage.getItem("class_id");
@@ -85,7 +86,6 @@ function displayMaterials() {
     materialsList.appendChild(listItem)
   })
 
-  getAssignments();
 
 }
 
