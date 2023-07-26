@@ -16,7 +16,16 @@
     resize: none;
 }
 
-.post-input.focus {
+.post-title {
+    margin-top: 2%;
+    border: 0 solid transparent;
+    width: 107%;
+    height: 50px;
+    margin-left: -3.8%;
+    resize: none;
+}
+
+.post-input.focus, .post-title.focus {
     outline: none;
     border-color: transparent;
   }

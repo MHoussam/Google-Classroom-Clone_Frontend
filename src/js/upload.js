@@ -12,7 +12,7 @@ let gapiInited = false;
 let gisInited = false;
 
 document.getElementById('file-input').style.visibility = 'hidden';
-document.getElementById('signout_button').style.visibility = 'hidden';
+//document.getElementById('signout_button').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
