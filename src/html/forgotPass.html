@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/styles/style.css">
-    <link rel="icon" href="./src/assets/images/google-classroom.png" type="image/png">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Google Accounts</title>
 </head>
 <body>
@@ -27,22 +26,12 @@
                 <input type="text" class="form_input" placeholder=" " id="user-email">
                 <label class="form_label">Email</label>
             </div>
-            <div class="form_div">
-                <input type="password" class="form_input" placeholder=" " id="user-password">
-                <label class="form_label">password</label>
-            </div>
-            <div class="f_desc">
-               <a href="./src/html/forgotPass.html"> <button id="forgot_pass">Forgot email or password?</button></a>
-                <p>Not your computer? Use Guest mode to sign in privately.</p>
-                <button id="learn_more">learn more</button>
-            </div>
             <div class="actions">
-                <a href="./src/html/signup.html"><button id="create-account" class="signup-link flex">Create account</button></a>
-                <button id="submitTeacher" class="submitTeacher">Log-In as a Teacher</button>
-                <button id="submitStudent" class="submitStudent">Log-In as a Student</button>
+                <button id="create-account" class="submit">Next</button>
             </div>
         </div>
     </div>
-    <script src="./src/js/login.js"></script>
+    
+    <script src="../js/forgotPassword.js"></script>
 </body>
 </html>

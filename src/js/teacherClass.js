@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", getMaterials);
-document.addEventListener("DOMContentLoaded",  getAssignments)
+document.addEventListener("DOMContentLoaded",  getAssignments);
+document.addEventListener("DOMContentLoaded",  getLink);
+
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('class_id');
 const token_value = localStorage.getItem("token_value");
@@ -174,9 +176,12 @@ cancel.addEventListener('click', function (){
     postText.value = '';
 });
 
-post.addEventListener('click', function (){
-    console.log("osta")
-    fetch('http://localhost/Google-Classroom-Clone_Backend/add-assignment.php', {
+function post(){
+    //console.log(due_time)
+}
+
+function getLink(){
+    fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-google-meet.php?class_id=${id}`, {
         method: "POST",
         mode: 'cors',
         cache: "no-cache",
@@ -186,23 +191,20 @@ post.addEventListener('click', function (){
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            title: title,
-            description : description,
-            due_date : due_date,
-            due_time : due_time
-        }), 
+            "token_value":token_value
+        })
+        
     })
-    .then(response => response.json()) 
-    .then(response => {
-        if (response["status"]!=0) {
-            // window.location.href = "index.html";
-            console.log(response);
-            //localStorage.setItem("email", registerCredentials.email);
+      .then((response) => response.json())
+      .then((class_link) => {
+        linksArray = class_link;
+        if(class_link.status!="0"){
+            console.log("what " + class_link.meet_link)
+            document.getElementById("join").href = `https://meet.google.com/${class_link.meet_link}`;
         } else {
-            console.log(response["message"]);
+                console.log(class_link.error);
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
+         
+      })
+      .catch((error) => console.log(error))
+}
