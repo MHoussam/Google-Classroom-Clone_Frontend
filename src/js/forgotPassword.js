@@ -19,9 +19,9 @@ document.getElementById("create-account").addEventListener("click", (event) => {
     }).then(response => response.json())
       .then(response => {
           if (response["status"]) {
-              console.log(response["status"])
+              console.log(response)
               if(response.status == 1){
-                window.location.href = "./changePass.html";
+                window.location.href = "changePass.html";
               }
               localStorage.setItem("email", email)
               
