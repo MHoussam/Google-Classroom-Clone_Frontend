@@ -42,13 +42,13 @@ function displayPosts() {
   classesList.innerHTML = "";
   classesArray.forEach((class_teacher) => {
     const listItem = document.createElement("li");
-    console.log(class_student.class_name)
+    console.log(class_teacher.class_name)
     listItem.innerHTML = `
     <div class="class flex-column pointer">
         <div class="class-up">
             <div class="class-title-options flex">
                 <div class="class-up-titles flex-column">
-                    <a href="./studentClass.html?class_name=${class_teacher.class_name}&section=${class_teacher.section}" class="link" onclick="getClassId(${class_student.class_id})">
+                    <a href="./teacherClass.html?class_name=${class_teacher.class_name}&section=${class_teacher.section}" class="link" onclick="getClassId(${class_teacher.class_id})">
                         <div class="class-title">${class_teacher.class_name}</div>
 
                         <div class="class-sub-title">${class_teacher.section}</div>
@@ -111,4 +111,32 @@ function getClassId (class_id) {
     //console.log("the captain: " + class_id);
     localStorage.setItem("class_id", class_id);
     console.log('class_id: ' + localStorage.getItem("class_id"));
+}
+
+const addClassBtn = document.getElementById("add-class");
+
+// Get the modal
+let modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+let btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+addClassBtn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }

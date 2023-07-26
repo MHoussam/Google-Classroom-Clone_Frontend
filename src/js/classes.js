@@ -112,3 +112,45 @@ function getClassId (class_id) {
     localStorage.setItem("class_id", class_id);
     console.log('class_id: ' + localStorage.getItem("class_id"));
 }
+
+
+//const addClassBtn = document.getElementById("add-class");
+const changeInfo = document.getElementById("account-info").addEventListener('click', function() {
+    infoModal.style.display = "block";
+});
+const cancel = document.getElementById("cancel").addEventListener('click', function() {
+    infoModal.style.display = "none";
+});
+
+let modal = document.getElementById("myModal");
+let infoModal = document.getElementById("account-info-modal");
+
+let btn = document.getElementById("myBtn");
+
+let span = document.getElementsByClassName("close")[0];
+
+// addClassBtn.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// changeInfo.onclick = function() {
+//     infoModal.style.display = "block";
+// }
+
+// cancel.onclick = function() {
+//     infoModal.style.display = "none";
+// }
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+span.onclick = function() {
+  infoModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal || event.target == infoModal ) {
+    modal.style.display = "none";
+    infoModal.style.display = "none";
+  }
+}
