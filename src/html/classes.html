@@ -70,7 +70,7 @@
                 </abbr>
                 
                 <abbr title="Google Account">
-                    <div class="header-google-account pointer"  id="account-info"></div>
+                    <div class="header-google-account pointer"  id="account-info" onclick="changeInfo()"></div>
                 </abbr>
         </header>
 
@@ -145,9 +145,9 @@
                             <label>Last Name</label>
                         </div>
                         
-                        <div class="actions">
+                        <div class="actions pointer">
                             <button class="cancel" id="Cancel pointer">Cancel</button>
-                            <button class="cancel" id="submit-info-changes pointer">Change</button>
+                            <button class="cancel" id="submit-info-changes pointer" onclick="sumbitInfo(e)">Change</button>
                         </div>
                     </form>
                 </div>

@@ -115,15 +115,16 @@ function getClassId (class_id) {
 
 
 //const addClassBtn = document.getElementById("add-class");
-const changeInfo = document.getElementById("account-info").addEventListener('click', function() {
+
+let infoModal = document.getElementById("account-info-modal");
+function changeInfo() {
     infoModal.style.display = "block";
-});
-const cancel = document.getElementById("cancel").addEventListener('click', function() {
+}
+function cancel() {
     infoModal.style.display = "none";
-});
+}
 
 let modal = document.getElementById("myModal");
-let infoModal = document.getElementById("account-info-modal");
 
 let btn = document.getElementById("myBtn");
 

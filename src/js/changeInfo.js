@@ -1,5 +1,5 @@
-document.getElementById("submit-info-changes").addEventListener("click", (event) => {
-    event.preventDefault();
+function submitInfo(e) {
+    e.preventDefault();
     const id = localStorage.getItem("id");
     const first_name = document.getElementById("first-name-input").value;
     const last_name = document.getElementById("last-name-input").value;
@@ -30,4 +30,4 @@ document.getElementById("submit-info-changes").addEventListener("click", (event)
         console.error('Error:', error);
     });
     //console.log(changeredentials)
-})
+}

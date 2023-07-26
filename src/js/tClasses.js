@@ -23,16 +23,16 @@ function getClasses() {
         body: JSON.stringify({
             "token_value":token_value
         })
-        
     })
     .then((response) => response.json())
     .then((class_teacher) => {
             classesArray = class_teacher;
-            if(class_teacher.status!="0"){
+            console.log(class_teacher.error);
+            //if(class_teacher.status!="0"){
                 displayPosts()
-            } else {
-                console.log(class_teacher.error);
-            }
+            //} else {
+              //  console.log(class_teacher.error);
+            //}
     })
     .catch((error) => console.log(error))
 }
