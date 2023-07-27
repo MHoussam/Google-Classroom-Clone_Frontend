@@ -11,7 +11,7 @@ let assignmentsArray = [];
 let materialsArray =[];
 function getMaterials() {
     fetch(`http://127.0.0.1/Google-Classroom-Clone_Backend/get-class-materials.php?class_id=${class_id}`, {
-        method: "POST",
+        method: "GET",
         mode: 'cors',
         cache: "no-cache",
         origin: "http://127.0.0.1:5500",
@@ -96,7 +96,7 @@ function getAssignmentId (assignment_id) {
 
 function getAssignments() {
     fetch(`http://127.0.0.1/Google-Classroom-Clone_Backend/get-class-assignments.php?class_id=${class_id}`, {
-        method: "POST",
+        method: "GET",
         mode: 'cors',
         cache: "no-cache",
         origin: "http://127.0.0.1:5500",
@@ -267,7 +267,7 @@ function posting(){
 
 function getLink(){
     fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-google-meet.php?class_id=${class_id}`, {
-        method: "POST",
+        method: "GET",
         mode: 'cors',
         cache: "no-cache",
         origin: "http://localhost:5500",
