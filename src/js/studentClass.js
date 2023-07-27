@@ -15,7 +15,7 @@ console.log(class_name + " " + section)
 // };
 
 function getMaterials() {
-  fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-materials.php?class_id=${class_id}`, {
+  fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-materials.php`, {
     method: "POST",
     mode: 'cors',
     cache: "no-cache",
@@ -25,6 +25,7 @@ function getMaterials() {
         'Content-Type': 'application/json'
     },
     body: JSON.stringify({
+        "class_id":class_id,
         "token_value": token_value
     })
 })
@@ -91,7 +92,7 @@ function displayMaterials() {
 }
 
 function getAssignments() {
-    fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-assignments.php?class_id=${class_id}`, {
+    fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-assignments.php`, {
         method: "POST",
         mode: 'cors',
         cache: "no-cache",
@@ -101,7 +102,8 @@ function getAssignments() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            "token_value":token_value
+            "token_value":token_value,
+            "class_id": class_id
         })
     })
         .then((response) => response.json())
@@ -177,7 +179,7 @@ function getAssignmentId (assignment_id) {
 }
 
 function getLink(){
-    fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-google-meet.php?class_id=${class_id}`, {
+    fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-google-meet.php`, {
         method: "POST",
         mode: 'cors',
         cache: "no-cache",
@@ -187,7 +189,8 @@ function getLink(){
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            "token_value":token_value
+            "class_id":class_id,
+            "token_value": token_value
         })
         
     })
