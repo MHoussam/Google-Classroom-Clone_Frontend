@@ -5,7 +5,7 @@ const class_id = localStorage.getItem("class_id");
 const token_value = localStorage.getItem("token_value");
 
 function getTeachers() {
-  fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-teachers.php?class_id=${class_id}` ,{
+  fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-teachers.php` ,{
     method: "POST",
     mode: 'cors',
     cache: "no-cache",
@@ -15,6 +15,7 @@ function getTeachers() {
         'Content-Type': 'application/json'
     },
     body: JSON.stringify({
+      "class_id":class_id,
         "token_value": token_value
     })
     })
@@ -52,7 +53,7 @@ function displayTeachers() {
 }
 
 function getStudents() {
-    fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-students.php?class_id=${class_id}` ,{
+    fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-students.php` ,{
       method: "POST",
       mode: 'cors',
       cache: "no-cache",
@@ -62,7 +63,8 @@ function getStudents() {
           'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-          "token_value": token_value
+        "class_id":class_id,
+        "token_value": token_value
       })
       })
       .then((response) => response.json())

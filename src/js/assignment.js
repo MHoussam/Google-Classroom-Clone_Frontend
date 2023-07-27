@@ -10,7 +10,7 @@ const token_value = localStorage.getItem("token_value");
 
 function getAssignment() {
   console.log(assignment_id);
-  fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-assignment-info.php?assignment_id=${assignment_id}`, {
+  fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-assignment-info.php`, {
     method: "POST",
     mode: 'cors',
     cache: "no-cache",
@@ -20,6 +20,7 @@ function getAssignment() {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
+      "assignment_id":assignment_id,
       "token_value": token_value
   })
   })

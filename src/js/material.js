@@ -10,7 +10,7 @@ const token_value = localStorage.getItem("token_value");
 
 function getMaterial() {
   console.log(material_id);
-  fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-material-info.php?material_id=${material_id}`, {
+  fetch(`http://localhost/Google-Classroom-Clone_Backend/get-class-material-info.php`, {
     method: "POST",
     mode: 'cors',
     cache: "no-cache",
@@ -20,6 +20,7 @@ function getMaterial() {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
+      "material_id":material_id,
       "token_value":token_value
   })
   })

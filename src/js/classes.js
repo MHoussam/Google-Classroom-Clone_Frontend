@@ -11,7 +11,7 @@ function getClasses() {
     // localStorage.setItem("material_id", 0);
     // localStorage.setItem("assignment_id", 0);
     // localStorage.setItem("class_id", 0);
-  fetch(`http://127.0.0.1/Google-Classroom-Clone_Backend/get-student-classes.php?student_id=${id}`, {
+  fetch(`http://127.0.0.1/Google-Classroom-Clone_Backend/get-student-classes.php`, {
         method: "POST",
         mode: 'cors',
         cache: "no-cache",
@@ -21,6 +21,7 @@ function getClasses() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+            "student_id":id,
             "token_value":token_value
         })
         
